@@ -1,0 +1,4 @@
+
+  <div *ngFor="let message of WebService.messages | async"><a [routerLink]="['/messages', message.owner]">{{message.text}}
+  by: {{message.owner}}</a>
+  </div>

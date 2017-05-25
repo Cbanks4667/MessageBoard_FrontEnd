@@ -1,0 +1,8 @@
+<nav>
+    <button routerLink="/">MessageBoard</button>
+    <button routerLink="/messages">Messages</button>  
+    <button *ngIf="!auth.isAuthenticated" routerLink="/login">Login</button>
+    <button *ngIf="!auth.isAuthenticated" routerLink="/register">Register</button>
+    <button *ngIf="auth.isAuthenticated" routerLink="/user">Welcome {{auth.name}}</button>
+    <button *ngIf="auth.isAuthenticated" (click)="auth.logout()">Log Out</button>
+</nav>

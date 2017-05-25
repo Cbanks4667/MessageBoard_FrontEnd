@@ -1,0 +1,24 @@
+<form [formGroup] = "form" (ngSubmit) = "onSubmit()" >
+    <table>
+        <tr>
+            <td><input type="text" [ngClass] ="{'error' : isValid('firstName')}" placeholder="First Name" width="350px" formControlName="firstName"></td>
+        </tr>
+        <tr>
+            <td><input type="text" [ngClass] ="{'error' : isValid('lastName')}" placeholder="Last Name" width="350px" formControlName="lastName"></td>
+        </tr>
+        <tr>
+            <td><input type="email" [ngClass] ="{'error' : isValid('email')}" placeholder="Email" width="350px" formControlName="email"></td>
+        </tr>
+        <tr>
+        <td><input type="password" [ngClass] ="{'error' : isValid('password')}" placeholder="Password" width="350px"formControlName="password"></td>
+        </tr>
+        <tr>
+            <td><input type="password" [ngClass] ="{'error' : isValid('confirmPassword')}" placeholder="Confirm Password" width="350px" formControlName="confirmPassword"></td>
+        </tr> 
+        <br> 
+         <span *ngIf="form.errors?.mismatchedFields">Passwords do not match</span>
+        <br>
+       
+        <button type="submit">Register</button>
+    </table>
+</form>
